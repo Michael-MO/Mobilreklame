@@ -95,10 +95,79 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configuration\App\AppConfig.cs" />
+    <Compile Include="DataTransformations\Domain\Faktura\FakturaViewModel.cs" />
+    <Compile Include="DataTransformations\Domain\Faktura\FakturaViewModelFactory.cs" />
+    <Compile Include="DataTransformations\Domain\Kunde\KundeViewModel.cs" />
+    <Compile Include="DataTransformations\Domain\Kunde\KundeViewModelFactory.cs" />
+    <Compile Include="DataTransformations\Domain\Levering\LeveringViewModel.cs" />
+    <Compile Include="DataTransformations\Domain\Levering\LeveringViewModelFactory.cs" />
+    <Compile Include="DataTransformations\Domain\Montering\MonteringViewModel.cs" />
+    <Compile Include="DataTransformations\Domain\Montering\MonteringViewModelFactory.cs" />
+    <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModel.cs" />
+    <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModelFactory.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\App\ObjectProvider.cs" />
+    <Compile Include="Model\Base\DomainBase.cs" />
+    <Compile Include="Model\Base\DomainBaseWithImages.cs" />
+    <Compile Include="Model\Domain\Faktura\Faktura.cs" />
+    <Compile Include="Model\Domain\Faktura\FakturaCatalog.cs" />
+    <Compile Include="Model\Domain\Kunde\Kunde.cs" />
+    <Compile Include="Model\Domain\Kunde\KundeCatalog.cs" />
+    <Compile Include="Model\Domain\Levering\Levering.cs" />
+    <Compile Include="Model\Domain\Levering\LeveringCatalog.cs" />
+    <Compile Include="Model\Domain\Montering\Montering.cs" />
+    <Compile Include="Model\Domain\Montering\MonteringCatalog.cs" />
+    <Compile Include="Model\Domain\Ordre\Ordre.cs" />
+    <Compile Include="Model\Domain\Ordre\OrdreCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\App\AppViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Faktura\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Faktura\ItemViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Faktura\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Faktura\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\Domain\Kunde\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Kunde\ItemViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Kunde\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Kunde\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\Domain\Levering\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Levering\ItemViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Levering\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Levering\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\Domain\Montering\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Montering\ItemViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Montering\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Montering\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\Domain\Ordre\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Ordre\ItemViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Ordre\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Domain\Ordre\ViewModelFactory.cs" />
+    <Compile Include="View\App\ImageView.xaml.cs">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\App\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\App\OpeningView.xaml.cs">
+      <DependentUpon>OpeningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\Faktura\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\Kunde\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\Levering\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\Montering\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\Ordre\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -124,6 +193,38 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\App\ImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\App\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\App\OpeningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\Faktura\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\Kunde\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\Levering\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\Montering\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\Ordre\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
