@@ -23,11 +23,11 @@
 
         </Grid.ColumnDefinitions>
 
-        <StackPanel Name="Top bar"  Grid.Column="3" Grid.Row="0" >
-            <Button Name= "Find eksisterne Kunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Right" Background="BlueViolet" Width="250" Height="60" />
+        <StackPanel Name="TopBar"  Grid.Column="3" Grid.Row="0" >
+            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Right" Background="BlueViolet" Width="250" Height="60" />
         </StackPanel>
         
-        <Grid Name="Left Center Box" Column="1" Row="1">
+        <Grid Name="LeftCenterBox" Column="1" Row="1">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -38,63 +38,63 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
-            <StackPanel Name="Kunde Information" Background="LightGray" Margin="0,0,10,10" >
-                <TextBlock Name="Overskrift" Text="KUNDE INFORMATION" FontSize="24"/>
+            <StackPanel Name="KundeInformation" Background="LightGray" Margin="0,0,10,10" >
+                <TextBlock Name="OverskriftKundeInformation" Text="KUNDE INFORMATION" FontSize="24"/>
                 
-                <TextBlock Name="Info - block 1 - LeftSide" Text="Kunde:"/>
-                <TextBox Name="Input - block 1 - LeftSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoKunde" Text="Kunde:"/>
+                <TextBox Name="InputKunde" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="Info - block 2 - LeftSide" Text="Att:"/>
-                <TextBox Name="Input - block 2 - LeftSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoAtt" Text="Att:"/>
+                <TextBox Name="InputAtt" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="Info - block 3 - LeftSide" Text="Adresse:"/>
-                <TextBox Name="Input - block 3 - LeftSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoAdresse" Text="Adresse:"/>
+                <TextBox Name="InputAdresse" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="Info - block 4 - LeftSide" Text="Post .:"/>
-                <TextBox Name="Input - block 4 - LeftSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoPost" Text="Post .:"/>
+                <TextBox Name="InputPost" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="Info - block 5 - LeftSide" Text="Tlf. nr.:"/>
-                <TextBox Name="Input - block 5 - LeftSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoTlfNr" Text="Tlf. nr.:"/>
+                <TextBox Name="InputTlfNr" Text="{Binding Mode=TwoWay}"/>
             </StackPanel>
 
-            <StackPanel Name="ordre Information" Grid.Column="1" Background="LightGray" Margin="10,0,10,10">
-                <TextBlock Name="Overskrift - RightSide" Text="ORDRE INFORMATION" FontSize="24"/>
+            <StackPanel Name="OrdreInformation" Grid.Column="1" Background="LightGray" Margin="10,0,10,10">
+                <TextBlock Name="OverskriftOrdreInformation" Text="ORDRE INFORMATION" FontSize="24"/>
 
-                <TextBlock Name="Info - block 1 - RightSide" Text="Ordre nr.:"/>
-                <TextBox Name="Input - block 1 - RightSide" Text="{Binding Mode=OneWay}"/>
+                <TextBlock Name="InfoOrdreNr" Text="Ordre nr.:"/>
+                <TextBox Name="InputOrdreNr" Text="{Binding Mode=OneWay}"/>
 
-                <TextBlock Name="Info - block 2 - RightSide" Text="Ordre dato:"/>
-                <TextBox Name="Input - block 2 - RightSide" />
+                <TextBlock Name="InfoOrdreDato" Text="Ordre dato:"/>
+                <TextBox Name="InputOrdreDato" />
 
-                <TextBlock Name="Info - block 3 - RightSide" Text="Lev. dato:"/>
-                <TextBox Name="Input - block 3 - RightSide"/>
+                <TextBlock Name="InfoLevDato" Text="Lev. dato:"/>
+                <TextBox Name="InputLevDato"/>
 
-                <TextBlock Name="Info - block 4 - RightSide" Text="Blok:"/>
-                <TextBox Name="Input - block 4 - RightSide" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoBlok" Text="Blok:"/>
+                <TextBox Name="InputBlok" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="Info - block 5 - RightSide" Text="Dato for fil:"/>
-                <TextBox Name="Input - block 5 - RightSide"/>
+                <TextBlock Name="InfoDatoForFil" Text="Dato for fil:"/>
+                <TextBox Name="InputDatoForFil"/>
             </StackPanel>
             
             
             <StackPanel Name="ProduktSpecifikation" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="LightGray" Margin="0,10,10,0">
-                <TextBlock Name="Overskrift - Bottom" Text="PRODUKTSPECIFIKATION" FontSize="24"/>
+                <TextBlock Name="OverskriftProduktSpecifikation" Text="PRODUKTSPECIFIKATION" FontSize="24"/>
 
 
-                <TextBlock Name="Info - block 1 - Bottom" Text="*Placeholder*"/>
-                <TextBox Name="Input - block 1 - Bottom"/>
+                <TextBlock  Text="*Placeholder*"/>
+                <TextBox />
 
-                <TextBlock Name="Info - block 2 - Bottom" Text="*Placeholder*"/>
-                <TextBox Name="Input - block 2 - Bottom"/>
+                <TextBlock Text="*Placeholder*"/>
+                <TextBox />
 
-                <TextBlock Name="Info - block 3 - Bottom" Text="*Placeholder*"/>
-                <TextBox Name="Input - block 3 - Bottom"/>
+                <TextBlock Text="*Placeholder*"/>
+                <TextBox />
 
-                <TextBlock Name="Info - block 4 - Bottom" Text="*Placeholder*"/>
-                <TextBox Name="Input - block 4 - Bottom"/>
+                <TextBlock  Text="*Placeholder*"/>
+                <TextBox />
 
-                <TextBlock Name="Info - block 5 - Bottom" Text="*Placeholder*"/>
-                <TextBox Name="Input - block 5 - Bottom"/>
+                <TextBlock Text="*Placeholder*"/>
+                <TextBox />
 
 
             </StackPanel>
@@ -104,58 +104,58 @@
 
         </Grid>
 
-        <Grid Name="Right Center Box" Column="2" Row="1">
+        <Grid Name="RightCenterBox" Column="2" Row="1">
 
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <StackPanel Name="OPGAVE SPECIFIKATION" Background="LightGray" Margin="10,0,20,10">
-                <TextBlock Name="Overskrfit - TopRight" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
+            <StackPanel Name="OpgaveSpesifikation" Background="LightGray" Margin="10,0,20,10">
+                <TextBlock Name="OverskrfitOpgaveSpesifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
 
-                <TextBlock Name="Info - Block 1 - TopRight" Text=""/>
-                <TextBox Name="Input - block 1 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
-                <TextBlock Name="Info - Block 2 - TopRight" Text=""/>
-                <TextBox Name="Input - block 2 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
-                <TextBlock Name="Info - Block 3 - TopRight" Text=""/>
-                <TextBox Name="Input - block 3 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
-                <TextBlock Name="Info - Block 4 - TopRight" Text=""/>
-                <TextBox Name="Input - block 4 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
-                <TextBlock Name="Info - Block 5 - TopRight" Text=""/>
-                <TextBox Name="Input - block 5 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
-                <TextBlock Name="Info - Block 6 - TopRight" Text=""/>
-                <TextBox Name="Input - block 6 - TopRight" Text=""/>
+                <TextBlock  Text=""/>
+                <TextBox  Text=""/>
 
             </StackPanel>
             
             
             <StackPanel Name="PRIS" Grid.Row="1" Background="LightGray" Margin="10,10,20,0">
-                <TextBlock Name="Overskrift - BottomRight" Text="PRIS" FontSize="24"/>
+                <TextBlock Name="OverskriftPris" Text="PRIS" FontSize="24"/>
 
 
-                <TextBlock Name="Info - block 1 - BottomRight" Text="Pris kr.:"/>
-                <TextBox Name="Input - block 1 - BottomRight" Text=""/>
+                <TextBlock Name="InfoPrisKr" Text="Pris kr.:"/>
+                <TextBox Name="InputPrisKr" Text=""/>
 
-                <TextBlock Name="Info - block 2 - BottomRight" Text="Dtp kr.:"/>
-                <TextBox Name="Input - block 2 - BottomRight" Text=""/>
+                <TextBlock Name="InfoDtpKr" Text="Dtp kr.:"/>
+                <TextBox Name="InputDtpKr" Text=""/>
 
-                <TextBlock Name="Info - block 3 - BottomRight" Text="Fragt kr.:"/>
-                <TextBox Name="Input - block 3 - BottomRight" Text=""/>
+                <TextBlock Name="InfoFragtKr" Text="Fragt kr.:"/>
+                <TextBox Name="InputFragtKr" Text=""/>
 
-                <TextBlock Name="Info - block 4 - BottomRight" Text="" />
-                <Button Name="Bottom - block 4 - BottomRight" Content="" Background="Aqua"/>
+                <TextBlock Name="InfoEkstraAntal" Text="Ekstra Antal" />
+                <Button Name="BottomPlus10Procent" Content="Plus 10% Antal" Background="Aqua"/>
 
-                <TextBlock Name="Info - block 5 - BottomRight" Text="Lev. antal:"/>
-                <TextBox Name="Input - block 5 - BottomRight" Text=""/>
+                <TextBlock Name="InfoLevAntal" Text="Lev. antal:"/>
+                <TextBox Name="InputLevAntal" Text=""/>
 
-                <TextBlock Name="Info - block 6 - BottomRight" Text=""/>
-                <Button Name="Bottom - block 6 - BottomRight" Content="" Background="Aqua"/>
+                <TextBlock Name="InfoSeBilag" Text="Se bilag"/>
+                <Button Name="BottomSeBilag" Content="" Background="Aqua"/>
 
             </StackPanel>
             

@@ -254,6 +254,9 @@
     <Reference Include="ExtensionsServices">
       <HintPath>..\..\MVVMStarterLibrary\ExtensionsServices\bin\Debug\ExtensionsServices.dll</HintPath>
     </Reference>
+    <Reference Include="Images">
+      <HintPath>..\..\MVVMStarterLibrary\ExtensionsServices\bin\Debug\Images.dll</HintPath>
+    </Reference>
     <Reference Include="InMemoryStorageImplementation">
       <HintPath>..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
