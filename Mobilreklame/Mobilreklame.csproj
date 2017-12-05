@@ -141,28 +141,28 @@
     <Compile Include="ViewModel\Domain\Ordre\ItemViewModel.cs" />
     <Compile Include="ViewModel\Domain\Ordre\MasterDetailsViewModel.cs" />
     <Compile Include="ViewModel\Domain\Ordre\ViewModelFactory.cs" />
-    <Compile Include="View\App\ImageView.xaml.cs">
+    <Compile Include="Views\App\ImageView.xaml.cs">
       <DependentUpon>ImageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\App\MainPage.xaml.cs">
+    <Compile Include="Views\App\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\App\OpeningView.xaml.cs">
+    <Compile Include="Views\App\OpeningView.xaml.cs">
       <DependentUpon>OpeningView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\Faktura\View.xaml.cs">
+    <Compile Include="Views\Domain\Faktura\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\Kunde\View.xaml.cs">
+    <Compile Include="Views\Domain\Kunde\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\Levering\View.xaml.cs">
+    <Compile Include="Views\Domain\Levering\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\Montering\View.xaml.cs">
+    <Compile Include="Views\Domain\Montering\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\Ordre\View.xaml.cs">
+    <Compile Include="Views\Domain\Ordre\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -187,35 +187,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\App\ImageView.xaml">
+    <Page Include="Views\App\ImageView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\App\MainPage.xaml">
+    <Page Include="Views\App\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\App\OpeningView.xaml">
+    <Page Include="Views\App\OpeningView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Domain\Faktura\View.xaml">
+    <Page Include="Views\Domain\Faktura\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Domain\Kunde\View.xaml">
+    <Page Include="Views\Domain\Kunde\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Domain\Levering\View.xaml">
+    <Page Include="Views\Domain\Levering\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Domain\Montering\View.xaml">
+    <Page Include="Views\Domain\Montering\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Domain\Ordre\View.xaml">
+    <Page Include="Views\Domain\Ordre\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

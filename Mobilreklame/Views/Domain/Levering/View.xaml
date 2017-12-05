@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Mobilreklame.View.Domain.Levering.View"
+    x:Class="Mobilreklame.Views.Domain.Levering.View"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Mobilreklame.View.Domain.Levering"
