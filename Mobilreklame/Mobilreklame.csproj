@@ -106,9 +106,6 @@
     <Compile Include="DataTransformations\Domain\Montering\MonteringViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModel.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModelFactory.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\App\ObjectProvider.cs" />
     <Compile Include="Model\Base\DomainBase.cs" />
     <Compile Include="Model\Base\DomainBaseWithImages.cs" />
@@ -190,10 +187,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\App\ImageView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -251,6 +244,12 @@
     <Reference Include="DataTransformationInterfaces">
       <HintPath>..\..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\DataTransformationInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="ExtensionsServices">
+      <HintPath>..\..\..\MVVMStarterLibrary\ExtensionsServices\bin\Debug\ExtensionsServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Images">
+      <HintPath>..\..\..\MVVMStarterLibrary\Images\bin\Debug\Images.dll</HintPath>
+    </Reference>
     <Reference Include="InMemoryStorageImplementation">
       <HintPath>..\..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
@@ -262,6 +261,9 @@
     </Reference>
     <Reference Include="PersistencyInterfaces">
       <HintPath>..\..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\PersistencyInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="UI">
+      <HintPath>..\..\..\MVVMStarterLibrary\UI\bin\Debug\UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
