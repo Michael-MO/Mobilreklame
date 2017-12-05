@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="Mobilreklame.View.Domain.Ordre.View"
+    x:Class="Mobilreklame.Views.Domain.Ordre.View"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Mobilreklame.View.Domain.Ordre"
+    xmlns:local="using:Mobilreklame.Views.Domain.Ordre"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sys="using:System"
@@ -149,13 +149,14 @@
                 <TextBox Name="InputFragtKr" Text=""/>
 
                 <TextBlock Name="InfoEkstraAntal" Text="Ekstra Antal" />
-                <Button Name="BottomPlus10Procent" Content="Plus 10% Antal" Background="Aqua"/>
+                <ToggleSwitch Name="SwitchPlus10Procent" OnContent="valgt - Plus 10%" OffContent=""/>
+
 
                 <TextBlock Name="InfoLevAntal" Text="Lev. antal:"/>
                 <TextBox Name="InputLevAntal" Text=""/>
 
                 <TextBlock Name="InfoSeBilag" Text="Se bilag"/>
-                <Button Name="BottomSeBilag" Content="" Background="Aqua"/>
+                <ToggleSwitch Name="SwitchSeBilag" OnContent="Se Bilag" OffContent=""/>
 
             </StackPanel>
             

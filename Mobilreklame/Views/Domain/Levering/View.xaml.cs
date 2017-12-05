@@ -15,14 +15,14 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Mobilreklame.View.App
+namespace Mobilreklame.Views.Domain.Levering
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ImageView : Page
+    public sealed partial class View : Page
     {
-        public ImageView()
+        public View()
         {
             this.InitializeComponent();
         }
