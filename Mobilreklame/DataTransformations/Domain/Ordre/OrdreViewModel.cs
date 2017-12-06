@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataTransformation.Implementation;
 
 namespace Mobilreklame.DataTransformations.Domain.Ordre
 {
-    class OrdreViewModel
+    public class OrdreViewModel : CopyableWithDefaultValuesBase
     {
+        public int CustomerRefID { get; set; }
+        public DateTime Date { get; set; }
+        public string Description { get; set; }
+        public bool Delivery { get; set; }
+        public bool ExtraProduction { get; set; }
+
+        public override void SetDefaultValues()
+        {
+            Key = NullKey;
+            Date = DateTime.Now;
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿using DataTransformation.Implementation;
+﻿using InMemoryStorage.Implementation;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
-    public class Kunde : TransformedBase<Kunde>
+    public class Kunde : CopyableBase
     {
         public Kunde(
             int key,
