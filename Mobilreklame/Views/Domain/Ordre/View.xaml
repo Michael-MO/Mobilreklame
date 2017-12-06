@@ -50,8 +50,11 @@
                 <TextBlock Name="InfoAdresse" Text="Adresse:"/>
                 <TextBox Name="InputAdresse" Text="{Binding Mode=TwoWay}"/>
 
-                <TextBlock Name="InfoPost" Text="Post .:"/>
+                <TextBlock Name="InfoPost" Text="Post nr.:"/>
                 <TextBox Name="InputPost" Text="{Binding Mode=TwoWay}"/>
+
+                <TextBlock Name="InfoBy" Text="By:"/>
+                <TextBox Name="InputBy" Text="{Binding Mode=TwoWay}"/>
 
                 <TextBlock Name="InfoTlfNr" Text="Tlf. nr.:"/>
                 <TextBox Name="InputTlfNr" Text="{Binding Mode=TwoWay}"/>
@@ -148,16 +151,22 @@
                 <TextBlock Name="InfoFragtKr" Text="Fragt kr.:"/>
                 <TextBox Name="InputFragtKr" Text=""/>
 
-                <TextBlock Name="InfoEkstraAntal" Text="Ekstra Antal" />
-                <ToggleSwitch Name="SwitchPlus10Procent" OnContent="valgt - Plus 10%" OffContent=""/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                     <CheckBox/>
+                </StackPanel>
 
 
                 <TextBlock Name="InfoLevAntal" Text="Lev. antal:"/>
                 <TextBox Name="InputLevAntal" Text=""/>
 
-                <TextBlock Name="InfoSeBilag" Text="Se bilag"/>
-                <ToggleSwitch Name="SwitchSeBilag" OnContent="Se Bilag" OffContent=""/>
 
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="InfoSeBilag" Text="Se bilag" Margin="0,0,15,0"/>
+
+                    <CheckBox/>
+                </StackPanel>
             </StackPanel>
             
         </Grid>

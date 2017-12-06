@@ -20,6 +20,83 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
+        <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,15,0"   
+                Content="Tilføj ny kunde" >
+        </Button>
+
+        <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="right" VerticalAlignment="Center" Margin="15,0,15,0"   
+                Content="Montering og Levering">
+            
+        </Button>
+        
+
+        <ListView Grid.Column="1" Grid.Row="1"
+                ItemsSource="{Binding}" SelectedItem="{Binding}" Background="LightGray">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Column="2" Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Kunde:" />
+                <TextBox/>
+
+                <TextBlock Text="CVR nr.:"/>
+                <TextBox/>
+
+                <TextBlock Text="Att:"/>
+                <TextBox/>
+
+                <TextBlock Text="E-mail:"/>
+                <TextBox/>
+
+                <TextBlock Text="Adresse:"/>
+                <TextBox/>
+
+                <TextBlock Text="Post nr.:"/>
+                <TextBox/>
+
+                <TextBlock Text="Tlf nr.:"/>
+                <TextBox/>
+
+            </StackPanel>
+            
+            <Grid Row="1" Background="Bisque">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Update"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Delete" />
+                </StackPanel>
+
+            </Grid>
+            
+            <Grid Row="2" Background="Bisque">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Create"/>
+                    <RadioButton Content="Update"/>
+                    <RadioButton Content="Delete"/>
+                    <RadioButton Content="Read"/>
+                </StackPanel>
+            </Grid>
+            
+        </Grid>
+
 
 
     </Grid>
