@@ -106,9 +106,6 @@
     <Compile Include="DataTransformations\Domain\Montering\MonteringViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModel.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModelFactory.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\App\ObjectProvider.cs" />
     <Compile Include="Model\Base\DomainBase.cs" />
     <Compile Include="Model\Base\DomainBaseWithImages.cs" />
@@ -162,9 +159,6 @@
     <Compile Include="Views\Domain\Levering\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Domain\Montering\View.xaml.cs">
-      <DependentUpon>View.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Domain\Ordre\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
@@ -190,10 +184,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\App\ImageView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -215,10 +205,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Domain\Levering\View.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Domain\Montering\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

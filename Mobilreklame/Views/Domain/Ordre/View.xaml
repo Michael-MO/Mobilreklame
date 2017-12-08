@@ -24,7 +24,14 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Name="TopBar"  Grid.Column="1" Grid.Row="0" >
-            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Left" Background="BlueViolet" Width="250" Height="60" />
+            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Left" Background="BlueViolet" Width="250" Height="60" Click="ChangeToKundePage" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal">
+            <Button Content="Kunde" Click="ChangeToKundePage"/>
+            <Button Content="Montering" Click="ChangeToMonteringPage"/>
+
+            
         </StackPanel>
         
         <Grid Name="LeftCenterBox" Column="1" Row="1">
@@ -154,7 +161,7 @@
                 <TextBlock Name="OverskrfitOpgaveSpesifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
                 
                 <TextBlock Text="Beskrivelse:" Style="{StaticResource TextBlockStyleOpgaveSpecifikation}"/>
-                <TextBox  Text="" TextWrapping="WrapWholeWords" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
+                <TextBox  Text="" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
 
             </StackPanel>
             

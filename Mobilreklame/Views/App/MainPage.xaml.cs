@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mobilreklame.Model.Domain.Ordre;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,21 @@ namespace Mobilreklame.Views.App
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void ChangePageOrdre(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Domain.Ordre.View), null);
+        }
+
+        private void ChangeToMOnteringPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Domain.Levering.View), null);
+        }
+
+        private void ChangeToKundePage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Domain.Kunde.View), null);
         }
     }
 }

@@ -21,12 +21,6 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,15,0"   
-                Content="Tilføj ny kunde" />
-
-        <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="right" VerticalAlignment="Center" Margin="15,0,15,0"   
-                Content="Montering og Levering"/>
-
 
         <ListView Grid.Column="1" Grid.Row="1"
                 ItemsSource="{Binding}" SelectedItem="{Binding}" Background="LightGray">
@@ -45,17 +39,7 @@
                 <RowDefinition Height="Auto" MinHeight="100"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" Style="{StaticResource StackPanelPositionStyle}">
-
-                <StackPanel.Resources>
-                    <Style TargetType="StackPanel" x:Name="StackPanelPositionStyle">
-                        <Setter Property="Margin" Value="0,0,0,0"/>
-                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                        <!--<Setter Property="" Value=""/>
-                        <Setter Property="" Value=""/>
-                        <Setter Property="" Value=""/>-->
-                    </Style>
-                </StackPanel.Resources>
+            <StackPanel Grid.Row="0">
 
 
                 <TextBlock Text="Kunde:" />
@@ -85,15 +69,21 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
 
                 <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Update" MinWidth="70" MinHeight="32"/>
+                    <Button Content="Rediger" MinWidth="70" MinHeight="32"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Delete" MinWidth="70" MinHeight="32"/>
+                    <Button Content="Tilføj ny kunde" MinWidth="70" MinHeight="32"/>
+                </StackPanel>
+
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Slet" MinWidth="70" MinHeight="32"/>
                 </StackPanel>
 
             </Grid>
