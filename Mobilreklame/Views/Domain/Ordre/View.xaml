@@ -23,8 +23,8 @@
 
         </Grid.ColumnDefinitions>
 
-        <StackPanel Name="TopBar"  Grid.Column="3" Grid.Row="0" >
-            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Right" Background="BlueViolet" Width="250" Height="60" />
+        <StackPanel Name="TopBar"  Grid.Column="1" Grid.Row="0" >
+            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Left" Background="BlueViolet" Width="250" Height="60" />
         </StackPanel>
         
         <Grid Name="LeftCenterBox" Column="1" Row="1">
@@ -39,136 +39,163 @@
             </Grid.RowDefinitions>
             
             <StackPanel Name="KundeInformation" Background="LightGray" Margin="0,0,10,10" >
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Name="TextBlockStyleKundeInformation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Name="TextBoxStyleKundeInformation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                </StackPanel.Resources>                
+                
+                
                 <TextBlock Name="OverskriftKundeInformation" Text="KUNDE INFORMATION" FontSize="24"/>
                 
-                <TextBlock Name="InfoKunde" Text="Kunde:"/>
-                <TextBox Name="InputKunde" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoKunde" Text="Kunde:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputKunde" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
-                <TextBlock Name="InfoAtt" Text="Att:"/>
-                <TextBox Name="InputAtt" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoAtt" Text="Att:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputAtt" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
-                <TextBlock Name="InfoAdresse" Text="Adresse:"/>
-                <TextBox Name="InputAdresse" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoAdresse" Text="Adresse:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputAdresse" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
-                <TextBlock Name="InfoPost" Text="Post nr.:"/>
-                <TextBox Name="InputPost" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoPost" Text="Post nr.:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputPost" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
-                <TextBlock Name="InfoBy" Text="By:"/>
-                <TextBox Name="InputBy" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoBy" Text="By:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputBy" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
-                <TextBlock Name="InfoTlfNr" Text="Tlf. nr.:"/>
-                <TextBox Name="InputTlfNr" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoTlfNr" Text="Tlf. nr.:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
+                <TextBox Name="InputTlfNr" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
             </StackPanel>
 
             <StackPanel Name="OrdreInformation" Grid.Column="1" Background="LightGray" Margin="10,0,10,10">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Name="TextBlockStyleOrdreInformation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Name="TextBoxStyleOrdreInformation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                </StackPanel.Resources>
+
+
                 <TextBlock Name="OverskriftOrdreInformation" Text="ORDRE INFORMATION" FontSize="24"/>
 
-                <TextBlock Name="InfoOrdreNr" Text="Ordre nr.:"/>
-                <TextBox Name="InputOrdreNr" Text="{Binding Mode=OneWay}"/>
+                <TextBlock Name="InfoOrdreNr" Text="Ordre nr.:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
+                <TextBox Name="InputOrdreNr" Text="{Binding Mode=OneWay}" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
-                <TextBlock Name="InfoOrdreDato" Text="Ordre dato:"/>
-                <TextBox Name="InputOrdreDato" />
+                <TextBlock Name="InfoOrdreDato" Text="Ordre dato:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
+                <TextBox Name="InputOrdreDato" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
-                <TextBlock Name="InfoLevDato" Text="Lev. dato:"/>
-                <TextBox Name="InputLevDato"/>
+                <TextBlock Name="InfoLevDato" Text="Lev. dato:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
+                <TextBox Name="InputLevDato" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
-                <TextBlock Name="InfoBlok" Text="Blok:"/>
-                <TextBox Name="InputBlok" Text="{Binding Mode=TwoWay}"/>
+                <TextBlock Name="InfoBlok" Text="Blok:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
+                <TextBox Name="InputBlok" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
-                <TextBlock Name="InfoDatoForFil" Text="Dato for fil:"/>
-                <TextBox Name="InputDatoForFil"/>
+                <TextBlock Name="InfoDatoForFil" Text="Dato for fil:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
+                <TextBox Name="InputDatoForFil" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
             </StackPanel>
-            
-            
+
+
             <StackPanel Name="ProduktSpecifikation" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="LightGray" Margin="0,10,10,0">
-                <TextBlock Name="OverskriftProduktSpecifikation" Text="PRODUKTSPECIFIKATION" FontSize="24"/>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Name="TextBlockStyleProduktSpecifikation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Name="TextBoxStyleProduktSpecifikation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                </StackPanel.Resources>
 
+               <StackPanel Orientation="Horizontal">
+                <TextBlock Name="OverskriftProduktSpecifikation" Text="PRODUKTSPECIFIKATION" FontSize="24"  Margin="0,0,20,0"/>
+                <Button Content="Vælg brugte produkter" HorizontalAlignment="Right" Margin="0,0,10,0" Background="IndianRed" />
+               </StackPanel>
 
-                <TextBlock  Text="*Placeholder*"/>
-                <TextBox />
+                <TextBlock  Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
+                <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}"/>
 
-                <TextBlock Text="*Placeholder*"/>
-                <TextBox />
+                <TextBlock Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
+                <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}"/>
 
-                <TextBlock Text="*Placeholder*"/>
-                <TextBox />
+                <TextBlock Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
+                <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}"/>
 
-                <TextBlock  Text="*Placeholder*"/>
-                <TextBox />
+                <TextBlock  Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
+                <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}"/>
 
-                <TextBlock Text="*Placeholder*"/>
-                <TextBox />
-
-
+                <TextBlock Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
+                <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}" />
+                
             </StackPanel>
-            
-            
-            
-
         </Grid>
 
         <Grid Name="RightCenterBox" Column="2" Row="1">
 
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto" MinHeight="325"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <StackPanel Name="OpgaveSpesifikation" Background="LightGray" Margin="10,0,20,10">
+
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Name="TextBlockStyleOpgaveSpecifikation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Name="TextBoxStyleOpgaveSpecifikation">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                </StackPanel.Resources>
+
                 <TextBlock Name="OverskrfitOpgaveSpesifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
-
-                <TextBlock  Text=""/>
-                <TextBox  Text=""/>
+                
+                <TextBlock Text="Beskrivelse:" Style="{StaticResource TextBlockStyleOpgaveSpecifikation}"/>
+                <TextBox  Text="" TextWrapping="WrapWholeWords" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
 
             </StackPanel>
             
             
-            <StackPanel Name="PRIS" Grid.Row="1" Background="LightGray" Margin="10,10,20,0">
-                <TextBlock Name="OverskriftPris" Text="PRIS" FontSize="24"/>
+                <StackPanel Name="PRIS" Grid.Row="1"  Background="LightGray" Margin="10,10,20,0">
+
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock" x:Name="TextBlockStylePris">
+                            <Setter Property="Margin" Value="10,0,10,0"/>
+                        </Style>
+                        <Style TargetType="TextBox" x:Name="TextBoxStylePris">
+                            <Setter Property="Margin" Value="10,0,10,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <TextBlock Name="OverskriftPris" Text="PRIS" FontSize="24"/>
 
 
-                <TextBlock Name="InfoPrisKr" Text="Pris kr.:"/>
-                <TextBox Name="InputPrisKr" Text=""/>
+                    <TextBlock Name="InfoPrisKr" Text="Pris kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                    <TextBox Name="InputPrisKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                <TextBlock Name="InfoDtpKr" Text="Dtp kr.:"/>
-                <TextBox Name="InputDtpKr" Text=""/>
+                    <TextBlock Name="InfoDtpKr" Text="Dtp kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                    <TextBox Name="InputDtpKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                <TextBlock Name="InfoFragtKr" Text="Fragt kr.:"/>
-                <TextBox Name="InputFragtKr" Text=""/>
+                    <TextBlock Name="InfoFragtKr" Text="Fragt kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                    <TextBox Name="InputFragtKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Name="InfoLevAntal" Text="Lev. antal:" Style="{StaticResource TextBlockStylePris}"/>
+                    <TextBox Name="InputLevAntal" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                     <CheckBox/>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Margin="10,5,-90,0"/>
+                        <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0" TextAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Margin="10,5,-90,0"/>
+                        <TextBlock Name="InfoSeBilag" Text="Se bilag" Margin="0,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </StackPanel>
 
-
-                <TextBlock Name="InfoLevAntal" Text="Lev. antal:"/>
-                <TextBox Name="InputLevAntal" Text=""/>
-
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="InfoSeBilag" Text="Se bilag" Margin="0,0,15,0"/>
-
-                    <CheckBox/>
-                </StackPanel>
-            </StackPanel>
-            
         </Grid>
 
 

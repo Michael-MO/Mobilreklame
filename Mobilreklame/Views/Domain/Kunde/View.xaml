@@ -20,15 +20,13 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
+
         <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,15,0"   
-                Content="Tilføj ny kunde" >
-        </Button>
+                Content="Tilføj ny kunde" />
 
         <Button Grid.Column="1" Background="Aquamarine" Width="250" Height="60" HorizontalAlignment="right" VerticalAlignment="Center" Margin="15,0,15,0"   
-                Content="Montering og Levering">
-            
-        </Button>
-        
+                Content="Montering og Levering"/>
+
 
         <ListView Grid.Column="1" Grid.Row="1"
                 ItemsSource="{Binding}" SelectedItem="{Binding}" Background="LightGray">
@@ -42,12 +40,24 @@
 
         <Grid Column="2" Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto" MinHeight="70"/>
+                <RowDefinition Height="Auto" MinHeight="100"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0" Style="{StaticResource StackPanelPositionStyle}">
+
+                <StackPanel.Resources>
+                    <Style TargetType="StackPanel" x:Name="StackPanelPositionStyle">
+                        <Setter Property="Margin" Value="0,0,0,0"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <!--<Setter Property="" Value=""/>
+                        <Setter Property="" Value=""/>
+                        <Setter Property="" Value=""/>-->
+                    </Style>
+                </StackPanel.Resources>
+
+
                 <TextBlock Text="Kunde:" />
                 <TextBox/>
 
@@ -70,22 +80,24 @@
                 <TextBox/>
 
             </StackPanel>
-            
+
             <Grid Row="1" Background="Bisque">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+
                 <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Update"/>
+                    <Button Content="Update" MinWidth="70" MinHeight="32"/>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Delete" />
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Delete" MinWidth="70" MinHeight="32"/>
                 </StackPanel>
 
             </Grid>
-            
+
             <Grid Row="2" Background="Bisque">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <RadioButton Content="Create"/>
@@ -94,7 +106,7 @@
                     <RadioButton Content="Read"/>
                 </StackPanel>
             </Grid>
-            
+
         </Grid>
 
 
