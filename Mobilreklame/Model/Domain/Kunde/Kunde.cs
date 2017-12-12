@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataTransformation.Implementation;
+﻿using InMemoryStorage.Implementation;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
-    public class Kunde : TransformedBase<Kunde>
+    public class Kunde : CopyableBase
     {
         public Kunde(
+            int key,
             string name,
             string phoneNumber,
             string email,
             string cvrNr,
-            string address,
+            string street,
             int zipCode,
-            string company) : base(NullKey)
+            string city,
+            string company) : base(key)
         {
             Name = name;
             PhoneNumber = phoneNumber;
             Email = email;
             CvrNr = cvrNr;
-            Address = address;
+            Street = street;
             ZipCode = zipCode;
+            City = city;
             Company = company;
         }
 
@@ -36,8 +34,9 @@ namespace Mobilreklame.Model.Domain.Kunde
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string CvrNr { get; set; }
-        public string Address { get; set; }
+        public string Street { get; set; }
         public int ZipCode { get; set; }
+        public string City { get; set; }
         public string Company { get; set; }
 
         public override void SetValuesFromObject(Kunde obj)
@@ -47,8 +46,9 @@ namespace Mobilreklame.Model.Domain.Kunde
             PhoneNumber = obj.PhoneNumber;
             Email = obj.Email;
             CvrNr = obj.CvrNr;
-            Address = obj.Address;
+            Street = obj.Street;
             ZipCode = obj.ZipCode;
+            City = obj.City;
             Company = obj.Company;
         }
     }

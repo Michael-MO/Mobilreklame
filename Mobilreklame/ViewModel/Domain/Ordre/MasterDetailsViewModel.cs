@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ExtensionsViewModel.Implementation;
+using Mobilreklame.DataTransformations.Domain.Ordre;
+using Mobilreklame.Model.App;
 
 namespace Mobilreklame.ViewModel.Domain.Ordre
 {
-    class MasterDetailsViewModel
+    public class MasterDetailsViewModel : MasterDetailsViewModelCRUD<OrdreViewModel>
     {
+        public MasterDetailsViewModel()
+            : base(new ViewModelFactory(), ObjectProvider.OrdreCatalog,
+                new List<string> { "CustomerRefID", "Description", "Delivery", "ExtraProduction" },
+                new List<string> { "Date" })
+        {
+        }
     }
 }

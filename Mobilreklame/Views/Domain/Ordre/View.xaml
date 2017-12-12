@@ -31,11 +31,11 @@
             <Button Content="Kunde" Click="ChangeToKundePage"/>
             <Button Content="Montering" Click="ChangeToMonteringPage"/>
 
-            
+
         </StackPanel>
-        
+
         <Grid Name="LeftCenterBox" Column="1" Row="1">
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -44,7 +44,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel Name="KundeInformation" Background="LightGray" Margin="0,0,10,10" >
                 <StackPanel.Resources>
                     <Style TargetType="TextBlock" x:Name="TextBlockStyleKundeInformation">
@@ -53,11 +53,11 @@
                     <Style TargetType="TextBox" x:Name="TextBoxStyleKundeInformation">
                         <Setter Property="Margin" Value="10,0,10,0"/>
                     </Style>
-                </StackPanel.Resources>                
-                
-                
+                </StackPanel.Resources>
+
+
                 <TextBlock Name="OverskriftKundeInformation" Text="KUNDE INFORMATION" FontSize="24"/>
-                
+
                 <TextBlock Name="InfoKunde" Text="Kunde:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
                 <TextBox Name="InputKunde" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
@@ -117,10 +117,10 @@
                     </Style>
                 </StackPanel.Resources>
 
-               <StackPanel Orientation="Horizontal">
-                <TextBlock Name="OverskriftProduktSpecifikation" Text="PRODUKTSPECIFIKATION" FontSize="24"  Margin="0,0,20,0"/>
-                <Button Content="Vælg brugte produkter" HorizontalAlignment="Right" Margin="0,0,10,0" Background="IndianRed" />
-               </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="OverskriftProduktSpecifikation" Text="PRODUKTSPECIFIKATION" FontSize="24"  Margin="0,0,20,0"/>
+                    <Button Content="Vælg brugte produkter" HorizontalAlignment="Right" Margin="0,0,10,0" Background="IndianRed" />
+                </StackPanel>
 
                 <TextBlock  Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
                 <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}"/>
@@ -136,7 +136,7 @@
 
                 <TextBlock Text="*Placeholder*" Style="{StaticResource TextBlockStyleProduktSpecifikation}"/>
                 <TextBox Style="{StaticResource TextBoxStyleProduktSpecifikation}" />
-                
+
             </StackPanel>
         </Grid>
 
@@ -159,49 +159,49 @@
                 </StackPanel.Resources>
 
                 <TextBlock Name="OverskrfitOpgaveSpesifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
-                
+
                 <TextBlock Text="Beskrivelse:" Style="{StaticResource TextBlockStyleOpgaveSpecifikation}"/>
                 <TextBox  Text="" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
 
             </StackPanel>
-            
-            
-                <StackPanel Name="PRIS" Grid.Row="1"  Background="LightGray" Margin="10,10,20,0">
-
-                    <StackPanel.Resources>
-                        <Style TargetType="TextBlock" x:Name="TextBlockStylePris">
-                            <Setter Property="Margin" Value="10,0,10,0"/>
-                        </Style>
-                        <Style TargetType="TextBox" x:Name="TextBoxStylePris">
-                            <Setter Property="Margin" Value="10,0,10,0"/>
-                        </Style>
-                    </StackPanel.Resources>
-
-                    <TextBlock Name="OverskriftPris" Text="PRIS" FontSize="24"/>
 
 
-                    <TextBlock Name="InfoPrisKr" Text="Pris kr.:" Style="{StaticResource TextBlockStylePris}"/>
-                    <TextBox Name="InputPrisKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
+            <StackPanel Name="PRIS" Grid.Row="1"  Background="LightGray" Margin="10,10,20,0">
 
-                    <TextBlock Name="InfoDtpKr" Text="Dtp kr.:" Style="{StaticResource TextBlockStylePris}"/>
-                    <TextBox Name="InputDtpKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Name="TextBlockStylePris">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                    <Style TargetType="TextBox" x:Name="TextBoxStylePris">
+                        <Setter Property="Margin" Value="10,0,10,0"/>
+                    </Style>
+                </StackPanel.Resources>
 
-                    <TextBlock Name="InfoFragtKr" Text="Fragt kr.:" Style="{StaticResource TextBlockStylePris}"/>
-                    <TextBox Name="InputFragtKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
+                <TextBlock Name="OverskriftPris" Text="PRIS" FontSize="24"/>
 
-                    <TextBlock Name="InfoLevAntal" Text="Lev. antal:" Style="{StaticResource TextBlockStylePris}"/>
-                    <TextBox Name="InputLevAntal" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox Margin="10,5,-90,0"/>
-                        <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0" TextAlignment="Center"/>
-                    </StackPanel>
+                <TextBlock Name="InfoPrisKr" Text="Pris kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                <TextBox Name="InputPrisKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox Margin="10,5,-90,0"/>
-                        <TextBlock Name="InfoSeBilag" Text="Se bilag" Margin="0,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
-                    </StackPanel>
+                <TextBlock Name="InfoDtpKr" Text="Dtp kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                <TextBox Name="InputDtpKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
+
+                <TextBlock Name="InfoFragtKr" Text="Fragt kr.:" Style="{StaticResource TextBlockStylePris}"/>
+                <TextBox Name="InputFragtKr" Text="" Style="{StaticResource TextBoxStylePris}"/>
+
+                <TextBlock Name="InfoLevAntal" Text="Lev. antal:" Style="{StaticResource TextBlockStylePris}"/>
+                <TextBox Name="InputLevAntal" Text="" Style="{StaticResource TextBoxStylePris}"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Margin="10,5,-90,0"/>
+                    <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0" TextAlignment="Center"/>
                 </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Margin="10,5,-90,0"/>
+                    <TextBlock Name="InfoSeBilag" Text="Se bilag" Margin="0,0,0,0" TextAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
 
         </Grid>
 

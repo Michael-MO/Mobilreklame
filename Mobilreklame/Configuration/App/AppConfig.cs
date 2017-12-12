@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using ExtensionsServices.Implementation;
 using Images.Implementation;
 using Images.Interfaces;
@@ -12,7 +8,6 @@ using Mobilreklame.Model.App;
 
 namespace Mobilreklame.Configuration.App
 {
-
     public class AppConfig
     {
         public static void Setup()

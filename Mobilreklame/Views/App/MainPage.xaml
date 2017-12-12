@@ -19,15 +19,15 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
 
-            <Button Grid.Column="0" Content="Ordre" 
+
+        <Button Grid.Column="0" Content="Ordre" 
                 VerticalAlignment="Center" HorizontalAlignment="Center" Click="ChangePageOrdre" />
-            <Button Grid.Column="1" Content="Kunde" 
+        <Button Grid.Column="1" Content="Kunde" 
                 VerticalAlignment="Center" HorizontalAlignment="Center" Click="ChangeToKundePage"/>
-            <Button Grid.Column="2" Content="Montering" 
+        <Button Grid.Column="2" Content="Montering" 
                 VerticalAlignment="Center" HorizontalAlignment="Center" Click="ChangeToMOnteringPage"/>
-            <Button Grid.Row="1" Content="Find Eksiternde Kunde" 
+        <Button Grid.Row="1" Content="Find Eksiternde Kunde" 
                 VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 

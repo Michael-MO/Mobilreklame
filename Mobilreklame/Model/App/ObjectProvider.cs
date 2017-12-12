@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.App
 {
-    class ObjectProvider
+    public class ObjectProvider
     {
+        public static Domain.Ordre.OrdreCatalog OrdreCatalog
+        {
+            get { return Domain.Ordre.OrdreCatalog.Instance; }
+        }
     }
 }
