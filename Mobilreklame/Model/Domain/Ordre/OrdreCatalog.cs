@@ -15,7 +15,6 @@ namespace Mobilreklame.Model.Domain.Ordre
             {
                 if (_instance != null) return _instance;
                 _instance = new OrdreCatalog();
-                new Ordre(1, 1, DateTimeOffset.Now, "Beskrivelse", false, false);
                 return _instance;
             }
         }

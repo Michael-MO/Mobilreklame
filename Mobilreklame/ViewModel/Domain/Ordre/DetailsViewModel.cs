@@ -8,6 +8,8 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
 {
     public class DetailsViewModel : DetailsViewModelBase<OrdreViewModel>
     {
+        private ObservableCollection<Ordre.ItemViewModel> _observableCollectionOrdre;
+
         public int CustomerRefID
         {
             get { return DataObject.CustomerRefID; }
@@ -58,8 +60,19 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
             }
         }
 
+        public ObservableCollection<Ordre.ItemViewModel> CollectionOrdre
+        {
+            get { return _observableCollectionOrdre; }
+        }
+
         public DetailsViewModel(OrdreViewModel obj) : base(obj)
         {
+            _observableCollectionOrdre = new ObservableCollection<Ordre.ItemViewModel>();
+
+            foreach (var carData in ObjectProvider.OrdreCatalog.All)
+            {
+                _observableCollectionOrdre.Add(new Ordre.ItemViewModel(carData));
+            }
         }
     }
 }
