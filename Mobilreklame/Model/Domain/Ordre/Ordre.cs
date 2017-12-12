@@ -5,7 +5,7 @@ namespace Mobilreklame.Model.Domain.Ordre
 {
     public class Ordre : CopyableBase
     {
-        public Ordre(int key, int customerRefID, DateTime date, string description, bool delivery, bool extraProduction)
+        public Ordre(int key, int customerRefID, DateTimeOffset date, string description, bool delivery, bool extraProduction)
             : base(key)
         {
             CustomerRefID = customerRefID;
@@ -21,7 +21,7 @@ namespace Mobilreklame.Model.Domain.Ordre
         }
 
         public int CustomerRefID { get; set; }
-        public DateTime Date { get; set; }
+        public DateTimeOffset Date { get; set; }
         public string Description { get; set; }
         public bool Delivery { get; set; }
         public bool ExtraProduction { get; set; }

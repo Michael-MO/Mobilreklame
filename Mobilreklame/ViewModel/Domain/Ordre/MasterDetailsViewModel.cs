@@ -9,8 +9,8 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
     {
         public MasterDetailsViewModel()
             : base(new ViewModelFactory(), ObjectProvider.OrdreCatalog,
-                new List<string> { "Car", "Customer", "Employee" },
-                new List<string> { "Date", "Price" })
+                new List<string> { "CustomerRefID", "Description", "Delivery", "ExtraProduction" },
+                new List<string> { "Date" })
         {
         }
     }

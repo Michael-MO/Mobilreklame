@@ -8,147 +8,58 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
 {
     public class DetailsViewModel : DetailsViewModelBase<OrdreViewModel>
     {
-        private ObservableCollection<Ordre.ItemViewModel> _observableCollectionCars;
+        public int CustomerRefID
+        {
+            get { return DataObject.CustomerRefID; }
+            set
+            {
+                DataObject.CustomerRefID = value;
+                OnPropertyChanged();
+            }
+        }
 
         public DateTimeOffset Date
         {
-            get { return DataObject.SalesDate; }
+            get { return DataObject.Date; }
             set
             {
-                DataObject.SalesDate = value;
+                DataObject.Date = value;
                 OnPropertyChanged();
             }
         }
 
-        public string Header
+        public string Description
         {
-            get { return "Price for car is " + Price; }
-        }
-
-        public int Price
-        {
-            get { return DataObject.FinalPrice; }
+            get { return DataObject.Description; }
             set
             {
-                DataObject.FinalPrice = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(Header));
-            }
-        }
-
-        public ObservableCollection<Car.ItemViewModel> CollectionCars
-        {
-            get { return _observableCollectionCars; }
-        }
-
-        public ObservableCollection<Customer.ItemViewModel> CollectionCustomers
-        {
-            get { return _observableCollectionCustomers; }
-        }
-
-        public ObservableCollection<Employee.ItemViewModel> CollectionEmployees
-        {
-            get { return _observableCollectionEmployees; }
-        }
-
-        public Car.ItemViewModel SelectedCar
-        {
-            get { return GetCarItemViewModel(DataObject.CarKey); }
-            set
-            {
-                if (value != null)
-                {
-                    DataObject.CarKey = value.DataObject.Key;
-                }
+                DataObject.Description = value;
                 OnPropertyChanged();
             }
         }
 
-        public Customer.ItemViewModel SelectedCustomer
+        public bool Delivery
         {
-            get { return GetCustomerItemViewModel(DataObject.CustomerKey); }
+            get { return DataObject.Delivery; }
             set
             {
-                if (value != null)
-                {
-                    DataObject.CustomerKey = value.DataObject.Key;
-                }
+                DataObject.Delivery = value;
                 OnPropertyChanged();
             }
         }
 
-        public Employee.ItemViewModel SelectedEmployee
+        public bool ExtraProduction
         {
-            get { return GetEmployeeItemViewModel(DataObject.EmployeeKey); }
+            get { return DataObject.ExtraProduction; }
             set
             {
-                if (value != null)
-                {
-                    DataObject.EmployeeKey = value.DataObject.Key;
-                }
+                DataObject.ExtraProduction = value;
                 OnPropertyChanged();
             }
         }
 
-        private Car.ItemViewModel GetCarItemViewModel(int key)
+        public DetailsViewModel(OrdreViewModel obj) : base(obj)
         {
-            foreach (var carItemViewModel in _observableCollectionCars)
-            {
-                if (carItemViewModel.DataObject.Key == key)
-                {
-                    return carItemViewModel;
-                }
-            }
-
-            return null;
-        }
-
-        private Customer.ItemViewModel GetCustomerItemViewModel(int key)
-        {
-            foreach (var customerItemViewModel in _observableCollectionCustomers)
-            {
-                if (customerItemViewModel.DataObject.Key == key)
-                {
-                    return customerItemViewModel;
-                }
-            }
-
-            return null;
-        }
-
-        private Employee.ItemViewModel GetEmployeeItemViewModel(int key)
-        {
-            foreach (var employeeItemViewModel in _observableCollectionEmployees)
-            {
-                if (employeeItemViewModel.DataObject.Key == key)
-                {
-                    return employeeItemViewModel;
-                }
-            }
-
-            return null;
-        }
-
-        public DetailsViewModel(SaleVMO obj) : base(obj)
-        {
-            _observableCollectionCars = new ObservableCollection<Car.ItemViewModel>();
-            _observableCollectionCustomers = new ObservableCollection<Customer.ItemViewModel>();
-            _observableCollectionEmployees = new ObservableCollection<Employee.ItemViewModel>();
-
-            foreach (var carData in ObjectProvider.CarCatalog.All)
-            {
-                _observableCollectionCars.Add(new Car.ItemViewModel(carData));
-            }
-
-            foreach (var customerData in ObjectProvider.CustomerCatalog.All)
-            {
-                _observableCollectionCustomers.Add(new Customer.ItemViewModel(customerData));
-            }
-
-            foreach (var employeeData in ObjectProvider.EmployeeCatalog.All)
-            {
-                _observableCollectionEmployees.Add(new Employee.ItemViewModel(employeeData));
-            }
         }
     }
 }
