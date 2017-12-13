@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Kunde 
 {
-    public class KundeCatalog : FilePersistableCatalog<Kunde, KundeViewModel, Kunde>
+    public class KundeCatalog : InMemoryCatalog<Kunde>
     {
         private static KundeCatalog _Instance = new KundeCatalog();
         public static KundeCatalog Instance => _Instance;
@@ -23,19 +23,9 @@ namespace Mobilreklame.Model.Domain.Kunde
             return dtoObj;
         }
 
-        public override Kunde CreateDomainObjectFromVMO(KundeViewModel vmObj)
+        public override Kunde CreateDomainObjectFromVMO(Kunde vmObj)
         {
-            Kunde EnKunde = new Kunde();
-            EnKunde.City = vmObj.City;
-            EnKunde.Company = vmObj.Company;
-            EnKunde.CvrNr = vmObj.CvrNr;
-            EnKunde.Email = vmObj.Email;
-            EnKunde.Key = vmObj.Key;
-            EnKunde.Name = vmObj.Name;
-            EnKunde.PhoneNumber = vmObj.PhoneNumber;
-            EnKunde.Street = vmObj.Street;
-            EnKunde.ZipCode = vmObj.ZipCode;
-            return EnKunde;
+            return vmObj;
         }
 
         public override Kunde CreateDTO(Kunde obj)
@@ -43,19 +33,9 @@ namespace Mobilreklame.Model.Domain.Kunde
             return obj;
         }
 
-        public override KundeViewModel CreateVMO(Kunde obj)
+        public override Kunde CreateVMO(Kunde obj)
         {
-            KundeViewModel vmoObj = new KundeViewModel();
-            vmoObj.City = obj.City;
-            vmoObj.Company = obj.Company;
-            vmoObj.CvrNr = obj.CvrNr;
-            vmoObj.Email = obj.Email;
-            vmoObj.Key = obj.Key;
-            vmoObj.Name = obj.Name;
-            vmoObj.PhoneNumber = obj.PhoneNumber;
-            vmoObj.Street = obj.Street;
-            vmoObj.ZipCode = obj.ZipCode;
-            return vmoObj;
+            return obj;
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Montering
 {
-    public class MonteringCatalog : FilePersistableCatalog<Montering, MonteringViewModel, Montering>
+    public class MonteringCatalog : InMemoryCatalog<Montering>
     {
         private static MonteringCatalog _Instance = new MonteringCatalog();
         public static MonteringCatalog Instance => _Instance;
@@ -28,21 +28,13 @@ namespace Mobilreklame.Model.Domain.Montering
             return obj;
         }
 
-        public override Montering CreateDomainObjectFromVMO(MonteringViewModel vmObj)
+        public override Montering CreateDomainObjectFromVMO(Montering vmObj)
         {
-            Montering EnMontering = new Montering();
-            EnMontering.Key = vmObj.Key;
-            EnMontering.CustomerID = vmObj.CustomerID;
-            EnMontering.MonteringID = vmObj.MonteringID;
-            return EnMontering;
+            return vmObj;
         }
-        public override MonteringViewModel CreateVMO(Montering obj)
+        public override Montering CreateVMO(Montering obj)
         {
-            MonteringViewModel vmoObj = new MonteringViewModel();
-            vmoObj.CustomerID = obj.CustomerID;
-            vmoObj.Key = obj.Key;
-            vmoObj.MonteringID = obj.MonteringID;
-            return vmoObj;
+            return obj;
         }
     }
 }

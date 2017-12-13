@@ -10,7 +10,7 @@ using ExtensionsModel.Implementation;
 
 namespace Mobilreklame.Model.Domain.Ordre
 {
-    public class OrdreCatalog : FilePersistableCatalog<Ordre, OrdreViewModel, Ordre>
+    public class OrdreCatalog : InMemoryCatalog<Ordre>
     {
         private static OrdreCatalog _Instance = new OrdreCatalog();
         public static OrdreCatalog Instance => _Instance;
@@ -26,30 +26,16 @@ namespace Mobilreklame.Model.Domain.Ordre
         {
             return obj;
         }
-        public override Ordre CreateDomainObjectFromVMO(OrdreViewModel vmObj)
+        public override Ordre CreateDomainObjectFromVMO(Ordre vmObj)
         {
-            Ordre EnOrdre = new Ordre();
-            EnOrdre.Key = vmObj.Key;
-            EnOrdre.CustomerRefID = vmObj.CustomerRefID;
-            EnOrdre.Date = vmObj.Date;
-            EnOrdre.Delivery = vmObj.Delivery;
-            EnOrdre.Description = vmObj.Description;
-            EnOrdre.ExtraProduction = vmObj.ExtraProduction;
-            return EnOrdre;
+            return vmObj;
         }
 
         
 
-        public override OrdreViewModel CreateVMO(Ordre obj)
+        public override Ordre CreateVMO(Ordre obj)
         {
-            OrdreViewModel vmoObj = new OrdreViewModel();
-            vmoObj.Key = obj.Key;
-            vmoObj.CustomerRefID = obj.CustomerRefID;
-            vmoObj.Date = obj.Date;
-            vmoObj.Delivery = obj.Delivery;
-            vmoObj.Description = obj.Description;
-            vmoObj.ExtraProduction = obj.ExtraProduction;
-            return vmoObj;
+            return obj;
         }
     }
 }

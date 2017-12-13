@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Levering
 {
-    public class LeveringCatalog : FilePersistableCatalog<Levering, LeveringViewModel, Levering>
+    public class LeveringCatalog : InMemoryCatalog<Levering>
     {
         private static LeveringCatalog _Instance = new LeveringCatalog();
         public static LeveringCatalog Instance => _Instance;
@@ -22,19 +22,9 @@ namespace Mobilreklame.Model.Domain.Levering
             return dtoObj;
         }
 
-        public override Levering CreateDomainObjectFromVMO(LeveringViewModel vmObj)
+        public override Levering CreateDomainObjectFromVMO(Levering vmObj)
         {
-            Levering EnLevering = new Levering();
-            EnLevering.Adresse = vmObj.Adresse;
-            EnLevering.By = vmObj.By;
-            EnLevering.CustomerRefID = vmObj.CustomerRefID;
-            EnLevering.Dato = vmObj.Dato;
-            EnLevering.Key = vmObj.Key;
-            EnLevering.Montering = vmObj.Montering;
-            EnLevering.OrderID = vmObj.OrderID;
-            EnLevering.Tidspunkt = vmObj.Tidspunkt;
-            EnLevering.Zip = vmObj.Zip;
-            return EnLevering;
+            return vmObj;
         }
 
         public override Levering CreateDTO(Levering obj)
@@ -42,19 +32,9 @@ namespace Mobilreklame.Model.Domain.Levering
             return obj;
         }
 
-        public override LeveringViewModel CreateVMO(Levering obj)
+        public override Levering CreateVMO(Levering obj)
         {
-            LeveringViewModel vmoObj = new LeveringViewModel();
-            vmoObj.Adresse = obj.Adresse;
-            vmoObj.By = obj.By;
-            vmoObj.CustomerRefID = obj.CustomerRefID;
-            vmoObj.Dato = obj.Dato;
-            vmoObj.Key = obj.Key;
-            vmoObj.Montering = obj.Montering;
-            vmoObj.OrderID = obj.OrderID;
-            vmoObj.Tidspunkt = obj.Tidspunkt;
-            vmoObj.Zip = obj.Zip;
-            return vmoObj;
+            return obj;
         }
     }
 }
