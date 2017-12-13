@@ -1,8 +1,9 @@
 ﻿using DataTransformation.Implementation;
+using InMemoryStorage.Implementation;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
-    public class Kunde : TransformedBase<Kunde>
+    public class Kunde : CopyableBase
     {
         public Kunde(
             int key,
@@ -29,7 +30,6 @@ namespace Mobilreklame.Model.Domain.Kunde
         {
 
         }
-
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
@@ -38,18 +38,5 @@ namespace Mobilreklame.Model.Domain.Kunde
         public int ZipCode { get; set; }
         public string City { get; set; }
         public string Company { get; set; }
-
-        public override void SetValuesFromObject(Kunde obj)
-        {
-            Key = obj.Key;
-            Name = obj.Name;
-            PhoneNumber = obj.PhoneNumber;
-            Email = obj.Email;
-            CvrNr = obj.CvrNr;
-            Street = obj.Street;
-            ZipCode = obj.ZipCode;
-            City = obj.City;
-            Company = obj.Company;
-        }
     }
 }

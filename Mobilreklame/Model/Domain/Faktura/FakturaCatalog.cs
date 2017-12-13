@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Faktura
 {
-    class FakturaCatalog
+    public class FakturaCatalog
     {
+        private static FakturaCatalog _Instance = new FakturaCatalog();
+        public static FakturaCatalog Instance => _Instance;
+        private FakturaCatalog()
+        {
+
+        }
     }
 }
