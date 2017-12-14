@@ -32,6 +32,15 @@ namespace Mobilreklame.DataTransformations.Domain.Kunde
         public string Company { get; set; }
         public override void SetDefaultValues()
         {
+            key = NullKey;
+            name = "";
+            phoneNumber = "";
+            email = "";
+            cvrNr = "";
+            street = "";
+            zipCode = 0;
+            city = "";
+            company = "";
         }
     }
 }

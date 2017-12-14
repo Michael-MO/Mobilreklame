@@ -9,6 +9,7 @@ namespace Mobilreklame.DataTransformations.Domain.Ordre
 {
     public class OrdreViewModel : CopyableWithDefaultValuesBase
     {
+        int key;
         int customerRefID;
         DateTime date;
         string description;
@@ -25,6 +26,11 @@ namespace Mobilreklame.DataTransformations.Domain.Ordre
         public bool ExtraProduction { get; set; }
         public override void SetDefaultValues()
         {
+            customerRefID = 0;
+            date = DateTime.Now;
+            description = "";
+            delivery = false;
+            extraProduction = false;
         }
     }
 }

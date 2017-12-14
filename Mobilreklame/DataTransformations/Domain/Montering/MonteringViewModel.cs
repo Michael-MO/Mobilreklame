@@ -19,6 +19,7 @@ namespace Mobilreklame.DataTransformations.Domain.Montering
         public int LeveringID { get; set; }
         public override void SetDefaultValues()
         {
+            leveringID = 0;
         }
     }
 }

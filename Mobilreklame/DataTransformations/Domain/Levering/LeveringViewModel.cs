@@ -32,6 +32,14 @@ namespace Mobilreklame.DataTransformations.Domain.Levering
         public bool Montering { get; set; }
         public override void SetDefaultValues()
         {
+            customerRefID = 0;
+            orderID = 0;
+            dato = DateTime.Now;
+            tidspunkt = DateTime.Now;
+            adresse = "";
+            by = "";
+            zip = 0;
+            montering = false;
         }
     }
 }
