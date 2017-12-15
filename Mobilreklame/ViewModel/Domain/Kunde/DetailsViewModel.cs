@@ -22,7 +22,7 @@ namespace Mobilreklame.ViewModel.Domain.Kunde
 
         public string PhoneNumber
         {
-            get { return DataObject.PhoneNumber; }
+            get { return "+45 " + DataObject.PhoneNumber; }
             set
             {
                 DataObject.PhoneNumber = value;

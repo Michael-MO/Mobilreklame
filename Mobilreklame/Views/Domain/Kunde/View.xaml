@@ -77,7 +77,7 @@
                 <TextBox Text="{Binding ItemDetails.City}"/>
 
                 <TextBlock Text="Tlf nr.:"/>
-                <TextBox Text="{Binding ItemDetails.Dataobject.PhoneNumber}"/>
+                <TextBox Text="{Binding ItemDetails.PhoneNumber}"/>
 
             </StackPanel>
 
