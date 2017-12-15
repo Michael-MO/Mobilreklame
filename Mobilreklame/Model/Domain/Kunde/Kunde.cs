@@ -1,5 +1,4 @@
 ﻿using InMemoryStorage.Implementation;
-using System;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
@@ -39,6 +38,5 @@ namespace Mobilreklame.Model.Domain.Kunde
         public int ZipCode { get; set; }
         public string City { get; set; }
         public string Company { get; set; }
-
     }
 }

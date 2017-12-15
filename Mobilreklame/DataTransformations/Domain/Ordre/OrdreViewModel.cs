@@ -3,22 +3,16 @@ using DataTransformation.Implementation;
 
 namespace Mobilreklame.DataTransformations.Domain.Ordre
 {
-    public class OrdreViewModel : CopyableWithDefaultValuesBase
+    public class OrdreViewModel : Model.Domain.Ordre.Ordre
     {
-        public int CustomerRefID { get; set; }
-        public DateTimeOffset Date { get; set; }
-        public string Description { get; set; }
-        public bool Delivery { get; set; }
-        public bool ExtraProduction { get; set; }
+        public OrdreViewModel()
+        {    
+        }
 
-        public override void SetDefaultValues()
+        public OrdreViewModel(int key, int customerRefID, DateTimeOffset date, string description, bool delivery, bool extraProduction)
+            : base(key, customerRefID, date, description, delivery, extraProduction)
         {
-            Key = NullKey;
-            CustomerRefID = 0;
-            Date = DateTimeOffset.Now;
-            Description = "No description";
-            Delivery = false;
-            ExtraProduction = false;
+            
         }
     }
 }

@@ -97,15 +97,10 @@
     </Compile>
     <Compile Include="Configuration\App\AppConfig.cs" />
     <Compile Include="DataTransformations\Domain\Faktura\FakturaViewModel.cs" />
-    <Compile Include="DataTransformations\Domain\Faktura\FakturaViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Kunde\KundeViewModel.cs" />
-    <Compile Include="DataTransformations\Domain\Kunde\KundeViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Levering\LeveringViewModel.cs" />
-    <Compile Include="DataTransformations\Domain\Levering\LeveringViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Montering\MonteringViewModel.cs" />
-    <Compile Include="DataTransformations\Domain\Montering\MonteringViewModelFactory.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModel.cs" />
-    <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModelFactory.cs" />
     <Compile Include="Model\App\ObjectProvider.cs" />
     <Compile Include="Model\Base\DomainBase.cs" />
     <Compile Include="Model\Base\DomainBaseWithImages.cs" />
