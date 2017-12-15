@@ -19,7 +19,7 @@ namespace Mobilreklame.Model.Domain.Kunde
             }
         }
 
-        private OrdreCatalog()
+        private KundeCatalog()
         {
             Create(new KundeViewModel(1, "Michael Olson", "+45 11 22 33 44", "Michael@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));
             Create(new KundeViewModel(2, "Daniel Stenalt", "+45 11 22 33 44", "Daniel@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));

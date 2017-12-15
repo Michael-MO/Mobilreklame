@@ -21,6 +21,11 @@ namespace Mobilreklame.ViewModel.Domain.Kunde
             get { return DataObject.Key; }
         }
 
+        public string Company
+        {
+            get { return DataObject.Company; }
+        }
+
         private KundeViewModel GetKunde()
         {
             return ObjectProvider.KundeCatalog.Read(DataObject.Key) as KundeViewModel;
