@@ -13,7 +13,7 @@ namespace Mobilreklame.ViewModel.Domain.Montering
     {
         private MonteringViewModel GetMontering()
         {
-            return ObjectProvider.MonteringCatalog.Read(DataObject.Key) as MonteringViewModel;
+            return ObjectProvider.MonteringCatalog.Read(DataObject.Key);
         }
         public ItemViewModel(MonteringViewModel obj) : base(obj)
         {

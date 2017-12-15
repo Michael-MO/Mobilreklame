@@ -101,11 +101,6 @@
     <Compile Include="DataTransformations\Domain\Levering\LeveringViewModel.cs" />
     <Compile Include="DataTransformations\Domain\Montering\MonteringViewModel.cs" />
     <Compile Include="DataTransformations\Domain\Ordre\OrdreViewModel.cs" />
-    <Compile Include="FilePersistence\FileSource.cs" />
-    <Compile Include="FilePersistence\FileStringPersistence.cs" />
-    <Compile Include="FilePersistence\IStringConverter.cs" />
-    <Compile Include="FilePersistence\IStringPersistence.cs" />
-    <Compile Include="FilePersistence\JSONConverter.cs" />
     <Compile Include="Model\App\ObjectProvider.cs" />
     <Compile Include="Model\Base\DomainBase.cs" />
     <Compile Include="Model\Base\DomainBaseWithImages.cs" />

@@ -13,7 +13,7 @@ namespace Mobilreklame.ViewModel.Domain.Kunde
     {
         private KundeViewModel GetKunde()
         {
-            return ObjectProvider.KundeCatalog.Read(DataObject.Key) as KundeViewModel;
+            return ObjectProvider.KundeCatalog.Read(DataObject.Key);
         }
         public ItemViewModel(KundeViewModel obj) : base(obj)
         {

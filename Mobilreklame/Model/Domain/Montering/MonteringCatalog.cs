@@ -9,15 +9,13 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Montering
 {
-    public class MonteringCatalog : InMemoryCatalog<Montering>
+    public class MonteringCatalog : FilePersistableCatalog<Montering, MonteringViewModel, Montering>
     {
         private static MonteringCatalog _Instance = new MonteringCatalog();
         public static MonteringCatalog Instance => _Instance;
         private MonteringCatalog()
         {
-
         }
-
         public override Montering CreateDomainObjectFromDTO(Montering dtoObj)
         {
             return dtoObj;
@@ -28,13 +26,19 @@ namespace Mobilreklame.Model.Domain.Montering
             return obj;
         }
 
-        public override Montering CreateDomainObjectFromVMO(Montering vmObj)
+        public override Montering CreateDomainObjectFromVMO(MonteringViewModel obj)
         {
-            return vmObj;
+            Montering KVM = new Montering();
+            KVM.Key = obj.Key;
+            KVM.LeveringID = obj.LeveringID;
+            return KVM;
         }
-        public override Montering CreateVMO(Montering obj)
+        public override MonteringViewModel CreateVMO(Montering obj)
         {
-            return obj;
+            MonteringViewModel KVM = new MonteringViewModel();
+            KVM.Key = obj.Key;
+            KVM.LeveringID = obj.LeveringID;
+            return KVM;
         }
     }
 }

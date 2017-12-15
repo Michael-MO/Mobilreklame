@@ -9,23 +9,31 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Kunde 
 {
-    public class KundeCatalog : InMemoryCatalog<Kunde>
+    public class KundeCatalog : FilePersistableCatalog<Kunde, KundeViewModel, Kunde>
     {
         private static KundeCatalog _Instance = new KundeCatalog();
         public static KundeCatalog Instance => _Instance;
         private KundeCatalog()
         {
-
         }
-
         public override Kunde CreateDomainObjectFromDTO(Kunde dtoObj)
         {
             return dtoObj;
         }
 
-        public override Kunde CreateDomainObjectFromVMO(Kunde vmObj)
+        public override Kunde CreateDomainObjectFromVMO(KundeViewModel obj)
         {
-            return vmObj;
+            Kunde k = new Kunde();
+            k.City = obj.City;
+            k.Company = obj.Company;
+            k.CvrNr = obj.CvrNr;
+            k.Email = obj.Email;
+            k.Key = obj.Key;
+            k.Name = obj.Name;
+            k.PhoneNumber = obj.Name;
+            k.Street = obj.Street;
+            k.ZipCode = obj.ZipCode;
+            return k;
         }
 
         public override Kunde CreateDTO(Kunde obj)
@@ -33,9 +41,19 @@ namespace Mobilreklame.Model.Domain.Kunde
             return obj;
         }
 
-        public override Kunde CreateVMO(Kunde obj)
+        public override KundeViewModel CreateVMO(Kunde obj)
         {
-            return obj;
+            KundeViewModel KVM = new KundeViewModel();
+            KVM.City = obj.City;
+            KVM.Company = obj.Company;
+            KVM.CvrNr = obj.CvrNr;
+            KVM.Email = obj.Email;
+            KVM.Key = obj.Key;
+            KVM.Name = obj.Name;
+            KVM.PhoneNumber = obj.Name;
+            KVM.Street = obj.Street;
+            KVM.ZipCode = obj.ZipCode;
+            return KVM;
         }
     }
 }

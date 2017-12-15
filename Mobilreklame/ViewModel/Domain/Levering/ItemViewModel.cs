@@ -14,7 +14,7 @@ namespace Mobilreklame.ViewModel.Domain.Levering
     {
         private LeveringViewModel GetLevering()
         {
-            return ObjectProvider.LeveringCatalog.Read(DataObject.Key) as LeveringViewModel;
+            return ObjectProvider.LeveringCatalog.Read(DataObject.Key);
         }
         public ItemViewModel(LeveringViewModel obj) : base(obj)
         {

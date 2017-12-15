@@ -16,9 +16,11 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
         public DetailsViewModel(OrdreViewModel obj) : base(obj)
         {
             _kundeCollection = new ObservableCollection<Kunde.ItemViewModel>();
+            Kunde.ViewModelFactory Factory = new Kunde.ViewModelFactory();
             foreach (var kundeData in ObjectProvider.KundeCatalog.All)
             {
-                _kundeCollection.Add(new Kunde.ItemViewModel(kundeData));
+                
+                _kundeCollection.Add(new Kunde.ItemViewModel(Factory.KundeToViewModel(kundeData)));
             }
         }
         public ObservableCollection<Kunde.ItemViewModel> KundeCollection
