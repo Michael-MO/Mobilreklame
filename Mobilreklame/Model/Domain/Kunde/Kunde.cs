@@ -1,4 +1,5 @@
 ﻿using InMemoryStorage.Implementation;
+using System;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
@@ -39,17 +40,5 @@ namespace Mobilreklame.Model.Domain.Kunde
         public string City { get; set; }
         public string Company { get; set; }
 
-        public override void SetValuesFromObject(Kunde obj)
-        {
-            Key = obj.Key;
-            Name = obj.Name;
-            PhoneNumber = obj.PhoneNumber;
-            Email = obj.Email;
-            CvrNr = obj.CvrNr;
-            Street = obj.Street;
-            ZipCode = obj.ZipCode;
-            City = obj.City;
-            Company = obj.Company;
-        }
     }
 }

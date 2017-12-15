@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.ViewModel.Domain.Kunde
 {
-    class MasterDetailsViewModel
+    public class MasterDetailsViewModel
     {
     }
 }
