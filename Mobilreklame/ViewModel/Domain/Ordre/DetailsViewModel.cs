@@ -69,9 +69,9 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
         {
             _observableCollectionOrdre = new ObservableCollection<Ordre.ItemViewModel>();
 
-            foreach (var carData in ObjectProvider.OrdreCatalog.All)
+            foreach (var ordreData in ObjectProvider.OrdreCatalog.All)
             {
-                _observableCollectionOrdre.Add(new Ordre.ItemViewModel(carData));
+                _observableCollectionOrdre.Add(new Ordre.ItemViewModel(ordreData));
             }
         }
     }
