@@ -12,5 +12,9 @@ namespace Mobilreklame.Model.App
         {
             get { return Domain.Ordre.OrdreCatalog.Instance; }
         }
+        public static Domain.Kunde.KundeCatalog KundeCatalog
+        {
+            get { return Domain.Kunde.KundeCatalog.Instance; }
+        }
     }
 }

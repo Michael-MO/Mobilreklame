@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataTransformation.Interfaces;
+using Mobilreklame.DataTransformations.Domain.Kunde;
+using ViewModel.Implementation;
 
 namespace Mobilreklame.ViewModel.Domain.Kunde
 {
-    class ViewModelFactory
+    public class ViewModelFactory : ViewModelFactoryBase<KundeViewModel>
     {
+        public override IDataWrapper<KundeViewModel> CreateDetailsViewModel(KundeViewModel obj)
+        {
+            return new DetailsViewModel(obj);
+        }
+
+        public override IDataWrapper<KundeViewModel> CreateItemViewModel(KundeViewModel obj)
+        {
+            return new ItemViewModel(obj);
+        }
     }
 }

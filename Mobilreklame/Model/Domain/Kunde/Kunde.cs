@@ -4,16 +4,8 @@ namespace Mobilreklame.Model.Domain.Kunde
 {
     public class Kunde : CopyableBase
     {
-        public Kunde(
-            int key,
-            string name,
-            string phoneNumber,
-            string email,
-            string cvrNr,
-            string street,
-            int zipCode,
-            string city,
-            string company) : base(key)
+        public Kunde(int key, string name, string phoneNumber, string email, string cvrNr, string street, int zipCode, string city, string company)
+            : base(key)
         {
             Name = name;
             PhoneNumber = phoneNumber;

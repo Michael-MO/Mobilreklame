@@ -1,12 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mobilreklame.DataTransformations.Domain.Kunde;
+using Mobilreklame.Model.App;
+using ViewModel.Implementation;
 
 namespace Mobilreklame.ViewModel.Domain.Kunde
 {
-    class ItemViewModel
+    public class ItemViewModel : ItemViewModelBase<KundeViewModel>
     {
+        public string Name
+        {
+            get { return DataObject.Name; }
+        }
+
+        public override string Description
+        {
+            get { return $"{DataObject.Name}, from {DataObject.Company}."; }
+        }
+
+        public int Key
+        {
+            get { return DataObject.Key; }
+        }
+
+        private KundeViewModel GetKunde()
+        {
+            return ObjectProvider.KundeCatalog.Read(DataObject.Key) as KundeViewModel;
+        }
+
+        public ItemViewModel(KundeViewModel obj) : base(obj)
+        {
+        }
     }
 }
