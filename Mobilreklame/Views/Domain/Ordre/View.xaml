@@ -7,15 +7,12 @@
     xmlns:sys="using:System"
     xmlns:Ordre="using:Mobilreklame.ViewModel.Domain.Ordre"
     xmlns:Kunde="using:Mobilreklame.ViewModel.Domain.Kunde"
+    xmlns:local="using:Mobilreklame.ViewModel.Domain.Ordre"
     mc:Ignorable="d">
 
     <!--<Page.DataContext>
         <local:MasterDetailsViewModel/>
     </Page.DataContext>-->
-
-
-
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
@@ -32,7 +29,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Name="TopBar"  Grid.Column="1" Grid.Row="0" >
-            <Button Name= "FindEksisterneKunde" Content="Find eksisterne Kunde" Margin="0,15,15,0" HorizontalAlignment="Left" Background="BlueViolet" Width="250" Height="60" Click="ChangeToKundePage" />
+            <Button Name= "FindEksisterendeKunde" IsEnabled="False" Content="Find eksisterende Kunde" Margin="0,15,15,0" HorizontalAlignment="Left" Background="BlueViolet" Width="250" Height="60" Click="ChangeToKundePage" />
         </StackPanel>
 
         <StackPanel Grid.Column="2" Orientation="Horizontal">
@@ -44,7 +41,7 @@
 
         <Grid Name="LeftCenterBox" Column="1" Row="1">
 
-            
+
 
 
             <Grid.ColumnDefinitions>
@@ -58,9 +55,9 @@
 
             <StackPanel Name="KundeInformation" Background="LightGray" Margin="0,0,10,10" >
 
-            <StackPanel.DataContext>
-                <Kunde:MasterDetailsViewModel/>
-            </StackPanel.DataContext>
+                <StackPanel.DataContext>
+                    <Kunde:MasterDetailsViewModel/>
+                </StackPanel.DataContext>
 
 
                 <StackPanel.Resources>
@@ -76,31 +73,31 @@
                 <TextBlock Name="OverskriftKundeInformation" Text="KUNDE INFORMATION" FontSize="24"/>
 
                 <TextBlock Name="InfoKunde" Text="Kunde:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputKunde" Text="{Binding   Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputKunde" Text="{Binding ItemDetails.Name, Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
                 <TextBlock Name="InfoAtt" Text="Att:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputAtt" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputAtt" IsEnabled="False" Text="Placeholder" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
                 <TextBlock Name="InfoAdresse" Text="Adresse:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputAdresse" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputAdresse" Text="{Binding ItemDetails.Adresse, Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
                 <TextBlock Name="InfoPost" Text="Post nr.:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputPost" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputPost" Text="{Binding ItemDetails.ZipCode, Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
                 <TextBlock Name="InfoBy" Text="By:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputBy" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputBy" Text="{Binding ItemDetails.City, Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
 
                 <TextBlock Name="InfoTlfNr" Text="Tlf. nr.:" Style="{StaticResource TextBlockStyleKundeInformation}"/>
-                <TextBox Name="InputTlfNr" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
+                <TextBox Name="InputTlfNr" Text="{Binding ItemDetails.PhoneNumber}" Style="{StaticResource TextBoxStyleKundeInformation}"/>
             </StackPanel>
 
             <StackPanel Name="OrdreInformation" Grid.Column="1" Background="LightGray" Margin="10,0,10,10">
-                
+
                 <StackPanel.DataContext>
                     <Ordre:MasterDetailsViewModel/>
                 </StackPanel.DataContext>
-                
-                
+
+
                 <StackPanel.Resources>
                     <Style TargetType="TextBlock" x:Name="TextBlockStyleOrdreInformation">
                         <Setter Property="Margin" Value="10,0,10,0"/>
@@ -114,25 +111,25 @@
                 <TextBlock Name="OverskriftOrdreInformation" Text="ORDRE INFORMATION" FontSize="24"/>
 
                 <TextBlock Name="InfoOrdreNr" Text="Ordre nr.:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
-                <TextBox Name="InputOrdreNr" Text="{Binding Mode=OneWay}" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
+                <TextBox Name="InputOrdreNr" Text="{Binding ItemDetails.Key, Mode=OneWay}" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
                 <TextBlock Name="InfoOrdreDato" Text="Ordre dato:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
 
-                    <TextBox Name="InputOrdreDato" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
-                   
+                <TextBox Name="InputOrdreDato" Text="Placeholder" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
+
 
 
                 <TextBlock Name="InfoLevDato" Text="Lev. dato:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Name="InputLevDato" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
-                    <CalendarDatePicker Name="LevCalendarDatePicker" HorizontalAlignment="Right" VerticalAlignment="Stretch" PlaceholderText="Dato" />
+                    <CalendarDatePicker Name="LevCalendarDatePicker" HorizontalAlignment="Right" VerticalAlignment="Stretch" PlaceholderText="Dato" Date="{Binding ItemDetails.Date, Mode=TwoWay}" DateFormat="{}{day.integer} {month.full} {year.full}" />
                 </StackPanel>
 
                 <TextBlock Name="InfoBlok" Text="Blok:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
-                <TextBox Name="InputBlok" Text="{Binding Mode=TwoWay}" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
+                <TextBox Name="InputBlok" Text="Placeholder" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
 
                 <TextBlock Name="InfoDatoForFil" Text="Dato for fil:" Style="{StaticResource TextBlockStyleOrdreInformation}"/>
-                <TextBox Name="InputDatoForFil" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
+                <TextBox IsEnabled="False" Name="InputDatoForFil" Style="{StaticResource TextBoxStyleOrdreInformation}"/>
             </StackPanel>
 
 
@@ -176,7 +173,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Name="OpgaveSpesifikation" Background="LightGray" Margin="10,0,20,10">
+            <StackPanel Name="OpgaveSpecifikation" Background="LightGray" Margin="10,0,20,10">
 
                 <StackPanel.DataContext>
                     <Ordre:MasterDetailsViewModel/>
@@ -191,10 +188,10 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <TextBlock Name="OverskrfitOpgaveSpesifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
+                <TextBlock Name="OverskriftOpgaveSpecifikation" Text="OPGAVE SPECIFIKATION" FontSize="24"/>
 
                 <TextBlock Text="Beskrivelse:" Style="{StaticResource TextBlockStyleOpgaveSpecifikation}"/>
-                <TextBox  Text="{Binding ItemDetails.DataObject.Description}" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
+                <TextBox  Text="{Binding ItemDetails.Description, Mode=TwoWay}" MinHeight="250" Style="{StaticResource TextBoxStyleOpgaveSpecifikation}"/>
 
             </StackPanel>
 
@@ -226,7 +223,7 @@
                 <TextBox Name="InputLevAntal" Text="" Style="{StaticResource TextBoxStylePris}"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Margin="10,5,-90,0"/>
+                    <CheckBox IsEnabled="{Binding ExtraProduction, Mode=TwoWay}"  Margin="10,5,-90,0"/>
                     <TextBlock Name="InfoEkstraAntal" Text="10% Ekstra Antal" VerticalAlignment="Center" Margin="0,0,10,0" TextAlignment="Center"/>
                 </StackPanel>
 

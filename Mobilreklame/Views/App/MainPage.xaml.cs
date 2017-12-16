@@ -33,7 +33,7 @@ namespace Mobilreklame.Views.App
             this.Frame.Navigate(typeof(Domain.Ordre.View), null);
         }
 
-        private void ChangeToMOnteringPage(object sender, RoutedEventArgs e)
+        private void ChangeToMonteringPage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Domain.Levering.View), null);
         }
@@ -41,6 +41,10 @@ namespace Mobilreklame.Views.App
         private void ChangeToKundePage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Domain.Kunde.View), null);
+        }
+        private void ChangeToLeveringPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Domain.Levering.View), null);
         }
     }
 }

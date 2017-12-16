@@ -2,6 +2,7 @@
 using ExtensionsViewModel.Implementation;
 using Mobilreklame.DataTransformations.Domain.Kunde;
 using Mobilreklame.Model.App;
+using ExtensionsCommands.Types;
 
 namespace Mobilreklame.ViewModel.Domain.Kunde
 {

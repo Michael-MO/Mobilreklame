@@ -22,7 +22,12 @@ namespace Mobilreklame.ViewModel.Domain.Kunde
 
         public string PhoneNumber
         {
-            get { return "+45 " + DataObject.PhoneNumber; }
+            get
+            {
+                if (DataObject.PhoneNumber != null)
+                { return "+45 " + DataObject.PhoneNumber; }
+                else { return "Intet nummer indtastet"; }
+            }
             set
             {
                 DataObject.PhoneNumber = value;

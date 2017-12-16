@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobilreklame.Model.Domain.Faktura
 {
-    class FakturaCatalog
+    public class FakturaCatalog
     {
     }
 }

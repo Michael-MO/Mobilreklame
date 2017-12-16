@@ -4,32 +4,54 @@ using Mobilreklame.DataTransformations.Domain.Kunde;
 
 namespace Mobilreklame.Model.Domain.Kunde
 {
-    public class KundeCatalog : InMemoryCatalog<KundeViewModel>
+    public class KundeCatalog : FilePersistableCatalog<Kunde, KundeViewModel, Kunde>
     {
-        #region Model Singleton implementation
-        private static KundeCatalog _instance;
-
-        public static KundeCatalog Instance
-        {
-            get
-            {
-                if (_instance != null) return _instance;
-                _instance = new KundeCatalog();
-                return _instance;
-            }
-        }
-
+        private static KundeCatalog _Instance = new KundeCatalog();
+        public static KundeCatalog Instance => _Instance;
         private KundeCatalog()
         {
-            Create(new KundeViewModel(1, "Michael Olson", "11 22 33 44", "Michael@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));
-            Create(new KundeViewModel(2, "Daniel Stenalt", "11 22 33 44", "Daniel@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));
-            Create(new KundeViewModel(3, "Benjamin Jessen", "11 22 33 44", "Benjamin@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));
-            Create(new KundeViewModel(4, "Tristan Kamp", "11 22 33 44", "Tristan@mail.dk", "DK11223344", "Danmarksgade 11", 1234, "Danby", "Danfirma A/S"));
+            Load();
+            CatalogChanged += i => Save();
         }
-        #endregion
 
-        #region Transformation methods
+        public override Kunde CreateDomainObjectFromDTO(Kunde dtoObj)
+        {
+            return dtoObj;
+        }
 
-        #endregion
+        public override Kunde CreateDomainObjectFromVMO(KundeViewModel obj)
+        {
+            Kunde k = new Kunde();
+            k.City = obj.City;
+            k.Company = obj.Company;
+            k.CvrNr = obj.CvrNr;
+            k.Email = obj.Email;
+            k.Key = obj.Key;
+            k.Name = obj.Name;
+            k.PhoneNumber = obj.PhoneNumber;
+            k.Street = obj.Street;
+            k.ZipCode = obj.ZipCode;
+            return k;
+        }
+
+        public override Kunde CreateDTO(Kunde obj)
+        {
+            return obj;
+        }
+
+        public override KundeViewModel CreateVMO(Kunde obj)
+        {
+            KundeViewModel KVM = new KundeViewModel();
+            KVM.City = obj.City;
+            KVM.Company = obj.Company;
+            KVM.CvrNr = obj.CvrNr;
+            KVM.Email = obj.Email;
+            KVM.Key = obj.Key;
+            KVM.Name = obj.Name;
+            KVM.PhoneNumber = obj.PhoneNumber;
+            KVM.Street = obj.Street;
+            KVM.ZipCode = obj.ZipCode;
+            return KVM;
+        }
     }
 }

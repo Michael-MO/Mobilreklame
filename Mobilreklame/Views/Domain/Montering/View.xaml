@@ -2,12 +2,99 @@
     x:Class="Mobilreklame.Views.Domain.Montering.View"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Mobilreklame.View.Domain.Montering"
+    xmlns:local="using:Mobilreklame.ViewModel.Domain.Montering"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <local:MasterDetailsViewModel/>
+    </Page.DataContext>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <ListView Grid.Column="1" Grid.Row="1"
+                  ItemsSource="{Binding ItemCollection}" 
+                  SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
+                  IsEnabled="{Binding ControlStates[ItemSelectorControl].Enabled}"
+                  Visibility="{Binding ControlStates[ItemSelectorControl].VisibilityState}" 
+                  Background="Lavender"
+                  Padding="5">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:ItemViewModel">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="?"
+                                   Margin="10"
+                                   HorizontalAlignment="Left"
+                                   FontSize="24" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Column="2" Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto" MinHeight="70"/>
+                <RowDefinition Height="Auto" MinHeight="100"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+
+            </StackPanel>
+
+            <Grid Row="1" Background="Bisque">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Rediger" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[UpdateCommand]}" 
+                            IsEnabled="{Binding ControlStates[UpdateControl].Enabled}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Tilføj ny kunde" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[CreateCommand]}" 
+                            IsEnabled="{Binding ControlStates[CreateControl].Enabled}"/>
+                </StackPanel>
+
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Slet" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[DeleteCommand]}" 
+                            IsEnabled="{Binding ControlStates[DeleteControl].Enabled}"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Row="2" Background="Bisque">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Create" Command="{Binding StateCommand[CreateStateCommand]}"/>
+                    <RadioButton Content="Update" Command="{Binding StateCommand[UpdateStateCommand]}"/>
+                    <RadioButton Content="Delete" Command="{Binding StateCommand[DeleteStateCommand]}"/>
+                    <RadioButton Content="Read" Command="{Binding StateCommand[ReadStateCommand]}"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+
 
     </Grid>
 </Page>

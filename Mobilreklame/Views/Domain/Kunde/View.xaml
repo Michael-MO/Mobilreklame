@@ -56,28 +56,28 @@
             <StackPanel Grid.Row="0">
 
                 <TextBlock Text="Kunde:" />
-                <TextBox Text="{Binding ItemDetails.Company}"/>
+                <TextBox Text="{Binding ItemDetails.Company, Mode=TwoWay}"/>
 
                 <TextBlock Text="CVR nr.:"/>
-                <TextBox Text="{Binding ItemDetails.CvrNr}"/>
+                <TextBox Text="{Binding ItemDetails.CvrNr, Mode=TwoWay}"/>
 
                 <TextBlock Text="Att:"/>
-                <TextBox Text="{Binding ItemDetails.Name}"/>
+                <TextBox Text="{Binding ItemDetails.Name, Mode=TwoWay}"/>
 
                 <TextBlock Text="E-mail:"/>
-                <TextBox Text="{Binding ItemDetails.Email}"/>
+                <TextBox Text="{Binding ItemDetails.Email, Mode=TwoWay}"/>
 
                 <TextBlock Text="Adresse:"/>
-                <TextBox Text="{Binding ItemDetails.Street}"/>
+                <TextBox Text="{Binding ItemDetails.Street, Mode=TwoWay}"/>
 
                 <TextBlock Text="Post nr.:"/>
-                <TextBox Text="{Binding ItemDetails.ZipCode}"/>
+                <TextBox Text="{Binding ItemDetails.ZipCode, Mode=TwoWay}"/>
                 
                 <TextBlock Text="By"/>
-                <TextBox Text="{Binding ItemDetails.City}"/>
+                <TextBox Text="{Binding ItemDetails.City, Mode=TwoWay}"/>
 
                 <TextBlock Text="Tlf nr.:"/>
-                <TextBox Text="{Binding ItemDetails.PhoneNumber}"/>
+                <TextBox Text="{Binding ItemDetails.PhoneNumber, Mode=TwoWay}"/>
 
             </StackPanel>
 
@@ -90,26 +90,29 @@
 
 
                 <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Rediger" MinWidth="70" MinHeight="32"/>
+                    <Button Content="Rediger" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[UpdateCommand]}" 
+                            IsEnabled="{Binding ControlStates[UpdateControl].Enabled}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Tilføj ny kunde" MinWidth="70" MinHeight="32"/>
+                    <Button Content="Tilføj ny kunde" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[CreateCommand]}" 
+                            IsEnabled="{Binding ControlStates[CreateControl].Enabled}"/>
                 </StackPanel>
 
 
                 <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Slet" MinWidth="70" MinHeight="32"/>
+                    <Button Content="Slet" MinWidth="70" MinHeight="32" Command="{Binding DataCommand[DeleteCommand]}" 
+                            IsEnabled="{Binding ControlStates[DeleteControl].Enabled}"/>
                 </StackPanel>
 
             </Grid>
 
             <Grid Row="2" Background="Bisque">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <RadioButton Content="Create"/>
-                    <RadioButton Content="Update"/>
-                    <RadioButton Content="Delete"/>
-                    <RadioButton Content="Read"/>
+                    <RadioButton Content="Create" Command="{Binding StateCommand[CreateStateCommand]}"/>
+                    <RadioButton Content="Update" Command="{Binding StateCommand[UpdateStateCommand]}"/>
+                    <RadioButton Content="Delete" Command="{Binding StateCommand[DeleteStateCommand]}"/>
+                    <RadioButton Content="Read" Command="{Binding StateCommand[ReadStateCommand]}"/>
                 </StackPanel>
             </Grid>
 

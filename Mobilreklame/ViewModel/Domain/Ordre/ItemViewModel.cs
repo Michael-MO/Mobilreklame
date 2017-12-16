@@ -8,7 +8,7 @@ namespace Mobilreklame.ViewModel.Domain.Ordre
     {
         public override string Description
         {
-            get { return DataObject.Description; }
+            get { return "Ordre nr." + DataObject.Key + " for kunde med ID: " + DataObject.CustomerRefID; }
         }
 
         public int Key
