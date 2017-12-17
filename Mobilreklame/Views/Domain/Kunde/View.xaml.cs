@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -12,6 +13,15 @@ namespace Mobilreklame.Views.Domain.Kunde
         public View()
         {
             this.InitializeComponent();
+        }
+        private void ChangeToLeveringPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Levering.View), null);
+        }
+
+        private void ChangeToOrdrePage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Ordre.View), null);
         }
     }
 }

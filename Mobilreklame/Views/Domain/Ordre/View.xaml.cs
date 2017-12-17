@@ -27,7 +27,7 @@ namespace Mobilreklame.Views.Domain.Ordre
             this.InitializeComponent();
         }
 
-        private void ChangeToMonteringPage(object sender, RoutedEventArgs e)
+        private void ChangeToLeveringPage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Levering.View), null);
         }

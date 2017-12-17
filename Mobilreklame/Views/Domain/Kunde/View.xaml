@@ -24,7 +24,10 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-
+        <StackPanel Grid.Column="2" Orientation="Horizontal">
+            <Button Content="Ordre" Click="ChangeToOrdrePage"/>
+            <Button Content="Levering" Click="ChangeToLeveringPage"/>
+        </StackPanel>
 
         <ListView Grid.Column="1" Grid.Row="1"
                   ItemsSource="{Binding ItemCollection}" 

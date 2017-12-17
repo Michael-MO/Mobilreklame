@@ -34,9 +34,7 @@
 
         <StackPanel Grid.Column="2" Orientation="Horizontal">
             <Button Content="Kunde" Click="ChangeToKundePage"/>
-            <Button Content="Montering" Click="ChangeToMonteringPage"/>
-
-
+            <Button Content="Levering" Click="ChangeToLeveringPage"/>
         </StackPanel>
 
         <Grid Name="LeftCenterBox" Column="1" Row="1">

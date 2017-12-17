@@ -24,8 +24,6 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-
-
         <ListView Grid.Column="1" Grid.Row="1"
                   ItemsSource="{Binding ItemCollection}" 
                   SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
